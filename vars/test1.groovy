@@ -17,7 +17,6 @@ def x = 2;
         y++
     }
 
-
     def fruits = ["apple","banana","orange"];
     for(i in fruits){
         println(i);

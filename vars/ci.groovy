@@ -9,7 +9,9 @@ def call(){
         stages {
             stage('Compile/Bild') {
                 steps {
-                    echo 'compile'
+                    script{
+                       common.compile
+                    }
                 }
             }
 
