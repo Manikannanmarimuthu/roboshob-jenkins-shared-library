@@ -10,7 +10,7 @@ def call(){
             stage('Compile/Bild') {
                 steps {
                     script{
-                       common.compile()
+                       common.compile
                     }
                 }
             }
