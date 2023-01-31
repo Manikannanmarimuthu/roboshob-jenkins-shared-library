@@ -23,7 +23,7 @@ def call(){
                 }
             }
 
-            stage('qulqity Control') {
+            stage('quality Control') {
                 steps {
                     echo 'Quqlity Control'
                 }
