@@ -10,8 +10,8 @@ def compile(){
 
 def unittests(){
     if(app_lang == "nodejs"){
-        //sh 'npm test'
-        sh 'echo test cases'
+        sh 'npm test'
+       // sh 'echo test cases'
     }
 
     if(app_lang=="maven"){
@@ -19,6 +19,10 @@ def unittests(){
     }
 
     if(app_lang=="python"){
-        sh 'python3 -m unitest || true'
+        sh 'python3 -m unitest'
     }
+}
+
+def email(email_note){
+    mail bcc: '', body: '', cc: '', from: 'manikannanmarimuthu@gmail.com', replyTo: '', subject: 'Test From JENKINS', to: 'manikannanmarimuthu@gmail.com'
 }

@@ -1,5 +1,5 @@
 def call(){
-
+    try{
     pipeline {
 
         agent {
@@ -9,15 +9,15 @@ def call(){
         stages {
             stage('Compile/Bild') {
                 steps {
-                    script{
-                       common.compile()
+                    script {
+                        common.compile()
                     }
                 }
             }
 
             stage('Unit Tests') {
                 steps {
-                    script{
+                    script {
                         common.unittests()
                     }
                 }
@@ -29,14 +29,15 @@ def call(){
                 }
             }
 
-            stage('Upload code to centralized Place'){
+            stage('Upload code to centralized Place') {
                 steps {
                     echo 'upload'
                 }
             }
 
         }
-
     }
-
+    }catch (Exception e){
+        common.email("Failed")
+    }
 }
