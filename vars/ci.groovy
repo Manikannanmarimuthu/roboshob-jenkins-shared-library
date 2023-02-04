@@ -1,7 +1,13 @@
 def call(){
     try{
-
         node('Workstation') {
+
+            stage('Checkout') {
+                cleanWs()
+                git branch: 'main', url: "https://github.com/Manikannanmarimuthu/${component}"
+                sh 'env'
+            }
+
             stage('Compile/Bild') {
                 common.compile()
             }
