@@ -4,8 +4,8 @@ def call(){
 
             stage('Checkout') {
                 cleanWs()
-                git branch: 'main', url: "https://github.com/Manikannanmarimuthu/${component}"
-                sh 'env'
+                //git branch: 'main', url: "https://github.com/Manikannanmarimuthu/${component}"
+                //sh 'env'
             }
 
             stage('Compile/Bild') {
